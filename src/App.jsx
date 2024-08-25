@@ -12,23 +12,42 @@ import Projects from "./pages/Projects/projects";
 
 const App = () => {
   return (
-    <div className="font-dosis">
-      <div className="flex w-screen h-screen">
-        <div className="w-1/7 flex flex-col border-r-2 border-gray-300 min-h-0">
-          <Navbar1 className=" flex-shrink-0" />
-          <Navbar2 className=" flex-shrink-0" />
-          <Navbar3 className=" flex-shrink-0" />
+    <div className="flex flex-col h-screen w-screen font-sans">
+      {/* Main layout container */}
+      <div className="flex flex-row flex-grow ">
+        {/* Sidebar */}
+        <div className="basis-1/7 border-r-2 border-gray-200 ">
+          <div className="">
+            <Navbar1 />
+          </div>
+
+          <div>
+            <Navbar2 />
+          </div>
+          <div>
+            <Navbar3 />
+          </div>
         </div>
-        <div className="w-6/7">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/cv" element={<Cv />} />
-            <Route path="/ideas" element={<Ideas />} />
-            <Route path="/projects" element={<Projects />} />
-          </Routes>
+
+        {/* Main content */}
+        <div className="flex-grow p-4">
+          <div className="grid grid-cols-2 gap-4">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/cv" element={<Cv />} />
+              <Route path="/ideas" element={<Ideas />} />
+              <Route path="/projects" element={<Projects />} />
+            </Routes>
+          </div>
         </div>
+      </div>
+
+      {/* Footer row */}
+      <div className="flex justify-center border-t-2 p-4 border-gray-200">
+        {/* Footer content */}
+        Chinmay Pendam
       </div>
     </div>
   );
