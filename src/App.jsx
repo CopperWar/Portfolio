@@ -12,35 +12,26 @@ import Projects from "./pages/Projects/projects";
 
 const App = () => {
   return (
-    <div className="flex flex-col h-screen w-screen font-sans">
+    <div className="flex flex-col h-screen w-screen font-dosis">
       {/* Main layout container */}
       <div className="flex flex-row flex-grow ">
         {/* Sidebar */}
         <div className="basis-1/7 border-r-2 border-gray-200 ">
-          <div className="">
-            <Navbar1 />
-          </div>
-
-          <div>
-            <Navbar2 />
-          </div>
-          <div>
-            <Navbar3 />
-          </div>
+          <Navbar1 />
+          <Navbar2 />
+          <Navbar3 />
         </div>
 
         {/* Main content */}
-        <div className="flex-grow p-4">
-          <div className="grid grid-cols-2 gap-4">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/cv" element={<Cv />} />
-              <Route path="/ideas" element={<Ideas />} />
-              <Route path="/projects" element={<Projects />} />
-            </Routes>
-          </div>
+        <div className=" basis-6/7 flex ">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/cv" element={<Cv />} />
+            <Route path="/ideas" element={<Ideas />} />
+            <Route path="/projects" element={<Projects />} />
+          </Routes>
         </div>
       </div>
 

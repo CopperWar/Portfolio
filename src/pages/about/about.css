@@ -1,0 +1,20 @@
+.clouds img{
+    position: absolute;
+    bottom: 0;
+    max-width: 100%;
+    animation: animate calc(3s * var(--i)) linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        opacity: 0;
+        transform: scale(1);
+    }
+    25%,75% {
+        opacity: 1;
+    }
+
+    100%{
+        transform: scale(3);
+    }
+}

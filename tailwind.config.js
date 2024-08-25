@@ -18,7 +18,26 @@ export default {
       fontFamily: {
         'dosis': [ "Inconsolata", 'monospace'],
       },
+      backgroundImage: {
+        'gradient-text': 'linear-gradient(90deg, rgba(103,103,103,1) 0%, rgba(74,74,74,1) 50%, rgba(0,0,0,1) 100%)',
+        'gradient-background': 'radial-gradient(circle, rgba(103,103,103,1) 0%, rgba(144,144,144,1) 50%, rgba(255,255,255,1) 100%)',
+
+      },
+      textColor: {
+        'transparent': 'transparent',
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    function({ addUtilities }) {
+      addUtilities({
+        '.bg-clip-text': {
+          'background-clip': 'text',
+        },
+        '.text-transparent': {
+          '-webkit-text-fill-color': 'transparent',
+        },
+      });
+    },
+  ],
 }
